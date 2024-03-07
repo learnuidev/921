@@ -1,16 +1,12 @@
 export const homePage = {
   header: {
-    title: "ts engineering",
+    title: "921",
   },
   description: {
-    title: "software engineering shop",
+    title: "gen ai platform from the future",
   },
 
   getStartedButton: {
     title: "Get Started",
-  },
-
-  viewProjects: {
-    title: "View Projects",
   },
 };

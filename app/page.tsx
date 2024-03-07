@@ -18,9 +18,6 @@ export default function Home() {
         <Button variant="outline" className="rounded-full">
           {homePage.getStartedButton.title}
         </Button>
-        <Button variant="outline" className="rounded-full">
-          {homePage.viewProjects.title}
-        </Button>
       </div>
     </div>
   );

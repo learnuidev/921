@@ -6,18 +6,19 @@ import Link from "next/link";
 export default function Learn() {
   const lessons = [
     {
-      title: "921",
-      description: "gen ai platform from the future",
+      title: "Huawei",
+      description: "everything about huawei",
       link: "https://www.921.studio",
     },
     {
-      title: "mandarino",
-      description: "intelligent language learning platform",
+      title: "Industrial Revolution",
+      description:
+        "transition from a farming and handicraft economy to one dominated by industry and machine manufacturing",
       link: "https://www.mandarino.io",
     },
     {
-      title: "composeui",
-      description: "aws console from the future",
+      title: "Creative Human",
+      description: "Learn the art of being a creative person",
       link: "https://www.composeui.io",
     },
   ];
@@ -28,7 +29,10 @@ export default function Learn() {
       <div className="flex items-center justify-center flex-col mt-56 space-y-12">
         {lessons.map((lesson) => {
           return (
-            <div key={lesson.title} className="flex flex-col items-center">
+            <div
+              key={lesson.title}
+              className="max-w-2xl flex flex-col items-center"
+            >
               <Link
                 target="_blank"
                 rel="noreferrer"
@@ -38,7 +42,7 @@ export default function Learn() {
                 {lesson.title}
               </Link>
 
-              <p className="text-gray-800 font-extralight">
+              <p className="text-gray-800 font-extralight text-center">
                 {lesson.description}
               </p>
             </div>

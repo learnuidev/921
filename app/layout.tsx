@@ -6,8 +6,8 @@ import "../lib/font-awesome/font-awesome.config";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "tse",
-  description: "pro social media from the future",
+  title: "921",
+  description: "gen ai platform the future",
 };
 
 export default function RootLayout({

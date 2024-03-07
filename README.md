@@ -1,6 +1,6 @@
 ## About
 
-ts engineering is a next gen networking app for software engineers
+921 is a next gen ai tooling app for ai engineers
 
 ## Tech Stack
 

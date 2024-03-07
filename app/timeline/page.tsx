@@ -6,13 +6,14 @@ import Link from "next/link";
 export default function History() {
   const tasks = [
     {
-      title: "Appiontment",
+      title: "Huawei Financial Statements 2024",
+      type: "pdf",
     },
     {
-      title: "Update Profile",
+      title: "List React 19 features",
     },
     {
-      title: "Onboarding",
+      title: "When was Liziba Station completed?",
     },
   ];
   return (
