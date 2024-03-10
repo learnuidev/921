@@ -226,7 +226,7 @@ export function FileUploaderComponent({
           </div>
         )}
         {selectedFiles?.length > 0 && (
-          <ScrollArea className="h-[240px] w-full rounded-md border p-4">
+          <ScrollArea className="h-[340px] w-full rounded-md border p-4">
             <div className="space-y-4">
               {selectedFiles?.length
                 ? selectedFiles.map((file) => {
@@ -243,19 +243,21 @@ export function FileUploaderComponent({
           </ScrollArea>
         )}
       </CardContent>
-      <CardFooter className="flex justify-end items-center gap-2">
-        {/* <Button className="w-32" variant="outline">
+      {selectedFiles?.length > 0 && (
+        <CardFooter className="flex justify-end items-center gap-2">
+          {/* <Button className="w-32" variant="outline">
           Cancel
         </Button> */}
-        <Button
-          className="w-full"
-          onClick={() => {
-            uploadFiles();
-          }}
-        >
-          Upload
-        </Button>
-      </CardFooter>
+          <Button
+            className="w-full"
+            onClick={() => {
+              uploadFiles();
+            }}
+          >
+            Upload
+          </Button>
+        </CardFooter>
+      )}
     </Card>
   );
 }
