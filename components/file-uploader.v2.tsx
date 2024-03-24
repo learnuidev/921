@@ -221,14 +221,16 @@ export function FileUploaderComponent({
       formData.append("image", file);
       const resp = await Axios.put(url, file, {
         onUploadProgress: (progressEvent) => {
-          const percentage = progressEvent.loaded / progressEvent.total;
-          console.log("PROGRESS", percentage * 100);
-          setProgress((prevProgress) => {
-            return {
-              ...prevProgress,
-              [id]: percentage,
-            };
-          });
+          if (progressEvent.total !== undefined) {
+            const percentage = progressEvent.loaded / progressEvent.total;
+            console.log("PROGRESS", percentage * 100);
+            setProgress((prevProgress) => {
+              return {
+                ...prevProgress,
+                [id]: percentage,
+              };
+            });
+          }
         },
         headers: { ["Content-Type"]: contentType },
       });
