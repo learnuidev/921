@@ -1,14 +1,13 @@
 "use client";
 
 import { Icons } from "@/components/icons";
-import { NavButton, Navbar } from "@/components/nav-bar";
+import { NavButton } from "@/components/nav-bar";
 import { Input } from "@/components/ui/input";
 import clsx from "clsx";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <main className="mt-56 mx-4 md:mx-32">
         <Input
           autoFocus

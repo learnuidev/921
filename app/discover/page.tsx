@@ -1,6 +1,5 @@
 "use client";
 
-import { Navbar } from "@/components/nav-bar";
 import Link from "next/link";
 
 export default function Learn() {
@@ -24,8 +23,6 @@ export default function Learn() {
   ];
   return (
     <div>
-      <Navbar />
-
       <div className="flex items-center justify-center flex-col mt-56 space-y-12">
         {lessons.map((lesson) => {
           return (

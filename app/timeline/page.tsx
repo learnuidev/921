@@ -1,6 +1,5 @@
 "use client";
 
-import { Navbar } from "@/components/nav-bar";
 import Link from "next/link";
 
 export default function History() {
@@ -18,8 +17,6 @@ export default function History() {
   ];
   return (
     <div>
-      <Navbar />
-
       <div className="flex items-center justify-center flex-col mt-56 space-y-8">
         {tasks.map((task) => {
           return (

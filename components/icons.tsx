@@ -4,10 +4,12 @@ import {
 } from "@fortawesome/react-fontawesome";
 import {
   faCompass,
+  faCopy,
   faEarthAsia,
   faGear,
   faHome,
   faMagnifyingGlass,
+  faPowerOff,
   faRectangleVerticalHistory,
 } from "@fortawesome/pro-thin-svg-icons";
 
@@ -24,4 +26,6 @@ export const Icons = {
   compass: createFAIcon(faCompass),
   home: createFAIcon(faHome),
   gear: createFAIcon(faGear),
+  powerOff: createFAIcon(faPowerOff),
+  copy: createFAIcon(faCopy),
 };

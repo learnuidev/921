@@ -27,6 +27,58 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+function Options() {
+  const [selectedOption, setSelectedOption] = useState("");
+  const options = [
+    {
+      title: "Create Project ✨",
+      id: "create-project",
+      description: "Create a brand new project",
+    },
+    {
+      title: "Upload files 📁",
+      id: "upload-files",
+      description: "Your files will be uploaded securely",
+    },
+  ];
+
+  if (selectedOption === "upload-files") {
+    return <FileUploaderComponent />;
+  }
+
+  return (
+    <div className="flex gap-4">
+      {options.map((option) => {
+        return (
+          <Card key={option.id} className="flex-1">
+            <CardHeader>
+              <CardTitle className="text-base">{option.title}</CardTitle>
+              <CardDescription className="text-sm">
+                {option.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4"></CardContent>
+
+            <CardFooter className="flex justify-end items-center gap-2">
+              {/* <Button className="w-32" variant="outline">
+              Cancel
+            </Button> */}
+              <Button
+                className="w-full"
+                onClick={() => {
+                  setSelectedOption(option.id);
+                }}
+              >
+                {option.title}
+              </Button>
+            </CardFooter>
+          </Card>
+        );
+      })}
+    </div>
+  );
+}
+
 export function FileUploader(props: { title: string }) {
   const { title } = props;
   return (
@@ -38,19 +90,19 @@ export function FileUploader(props: { title: string }) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-4xl h-[640px]">
         <DialogHeader>
-          <DialogTitle>Upload files</DialogTitle>
+          <DialogTitle>Getting Started</DialogTitle>
           <DialogDescription>
-            Your files will be uploaded publicly.
+            Please select from the following options
           </DialogDescription>
         </DialogHeader>
 
         <div className="w-full">
-          <FileUploaderComponent />
+          <Options />
         </div>
 
-        <DialogFooter className="sm:justify-start">
+        <DialogFooter className="sm:justify-end items-end">
           <DialogClose asChild>
-            <Button type="button" variant="secondary">
+            <Button type="button" variant="secondary" className="w-32">
               Close
             </Button>
           </DialogClose>
