@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Axios from "axios";
+import Axios, { AxiosProgressEvent } from "axios";
 import { getUploadUrl } from "@/modules/asset/asset.api";
 
 import { Input } from "@/components/ui/input";
@@ -64,10 +64,12 @@ export const FileUploader = ({ onUploadSuccess }: any) => {
       const formData = new FormData();
       formData.append("image", file);
       const resp = await Axios.put(url, file, {
-        onUploadProgress: (progressEvent) => {
-          const percentage = progressEvent.loaded / progressEvent.total;
-          console.log("PROGRESS", percentage * 100);
-          setProgress(percentage * 100);
+        onUploadProgress: (progressEvent: AxiosProgressEvent) => {
+          if (progressEvent.total !== undefined) {
+            const percentage = progressEvent.loaded / progressEvent.total;
+            console.log("PROGRESS", percentage * 100);
+            setProgress(percentage * 100);
+          }
         },
         headers: { ["Content-Type"]: contentType },
       });
